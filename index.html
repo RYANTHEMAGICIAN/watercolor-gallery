@@ -1,0 +1,210 @@
+export default function WatercolorGallery() {
+  const paintings = [
+    {
+      title: "Misty Mountains",
+      artist: "Elena Rivers",
+      image:
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Lavender Dreams",
+      artist: "Sophia Vale",
+      image:
+        "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Ocean Bloom",
+      artist: "Noah Hart",
+      image:
+        "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
+    },
+    {
+      title: "Golden Meadow",
+      artist: "Ava Sterling",
+      image:
+        "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=1200&auto=format&fit=crop",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-rose-50 via-orange-50 to-sky-50 text-gray-800">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_top_left,_#f9a8d4,_transparent_40%),radial-gradient(circle_at_bottom_right,_#93c5fd,_transparent_40%)]"></div>
+
+        <div className="relative max-w-7xl mx-auto px-6 py-24 text-center">
+          <p className="uppercase tracking-[0.4em] text-sm text-rose-500 mb-4">
+            Watercolor Art Gallery
+          </p>
+
+          <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight mb-6">
+            Where Colors
+            <span className="block text-rose-400">Flow Like Poetry</span>
+          </h1>
+
+          <p className="max-w-2xl mx-auto text-lg text-gray-600 leading-relaxed">
+            Explore delicate watercolor masterpieces inspired by nature,
+            emotion, and imagination. A dreamy digital gallery crafted for
+            artists and art lovers.
+          </p>
+
+          <div className="mt-10 flex flex-wrap justify-center gap-4">
+            <button className="px-6 py-3 rounded-full bg-rose-400 text-white shadow-lg hover:scale-105 transition-transform duration-300">
+              Explore Gallery
+            </button>
+
+            <button className="px-6 py-3 rounded-full border border-rose-300 bg-white/60 backdrop-blur hover:bg-white transition">
+              Meet The Artists
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Art */}
+      <section className="max-w-7xl mx-auto px-6 py-20">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div>
+            <p className="text-rose-500 uppercase tracking-widest text-sm mb-2">
+              Featured Collection
+            </p>
+            <h2 className="text-4xl font-serif font-semibold">
+              Soft Washes & Dreamy Landscapes
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-gray-600">
+            Every piece in this collection celebrates the fluid beauty of
+            watercolor — layered textures, gentle gradients, and expressive
+            brushwork.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8">
+          {paintings.map((painting, index) => (
+            <div
+              key={index}
+              className="group rounded-3xl overflow-hidden bg-white/70 backdrop-blur shadow-md hover:shadow-2xl transition-all duration-500"
+            >
+              <div className="overflow-hidden h-72">
+                <img
+                  src={painting.image}
+                  alt={painting.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+              </div>
+
+              <div className="p-6">
+                <h3 className="text-2xl font-serif mb-2">
+                  {painting.title}
+                </h3>
+                <p className="text-gray-500">by {painting.artist}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="max-w-6xl mx-auto px-6 py-20">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=1200&auto=format&fit=crop"
+              alt="Watercolor painting workspace"
+              className="rounded-[2rem] shadow-2xl object-cover h-[500px] w-full"
+            />
+          </div>
+
+          <div>
+            <p className="uppercase tracking-[0.3em] text-rose-400 text-sm mb-4">
+              About The Gallery
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">
+              Art Inspired By Nature & Emotion
+            </h2>
+
+            <p className="text-gray-600 leading-relaxed mb-6 text-lg">
+              This digital gallery was designed to capture the calming essence
+              of watercolor art. The soft palette, airy layouts, and fluid
+              animations create an immersive experience that feels like stepping
+              inside a painting.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-2xl bg-white/70 p-5 shadow">
+                <h3 className="text-3xl font-bold text-rose-400">120+</h3>
+                <p className="text-gray-600 mt-2">Curated Paintings</p>
+              </div>
+
+              <div className="rounded-2xl bg-white/70 p-5 shadow">
+                <h3 className="text-3xl font-bold text-sky-400">35</h3>
+                <p className="text-gray-600 mt-2">Featured Artists</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="px-6 pb-24">
+        <div className="max-w-4xl mx-auto rounded-[2rem] bg-white/70 backdrop-blur shadow-2xl p-10 text-center border border-white/60">
+          <p className="uppercase tracking-[0.3em] text-rose-400 text-sm mb-4">
+            Stay Inspired
+          </p>
+
+          <h2 className="text-4xl font-serif font-bold mb-4">
+            Join Our Art Letter
+          </h2>
+
+          <p className="text-gray-600 max-w-2xl mx-auto mb-8">
+            Receive new watercolor collections, artist stories, and exclusive
+            virtual exhibitions directly in your inbox.
+          </p>
+
+          <div className="flex flex-col md:flex-row gap-4 justify-center max-w-2xl mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-5 py-4 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-rose-300"
+            />
+
+            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-rose-400 to-orange-300 text-white font-medium hover:scale-105 transition-transform duration-300">
+              Subscribe
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/40 bg-white/30 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div>
+            <h3 className="font-serif text-2xl font-bold text-rose-400">
+              AquaMuse
+            </h3>
+            <p className="text-gray-500 text-sm mt-1">
+              A watercolor-inspired digital gallery.
+            </p>
+          </div>
+
+          <div className="flex gap-6 text-gray-500 text-sm">
+            <a href="#" className="hover:text-rose-400 transition">
+              Gallery
+            </a>
+            <a href="#" className="hover:text-rose-400 transition">
+              Artists
+            </a>
+            <a href="#" className="hover:text-rose-400 transition">
+              Exhibitions
+            </a>
+            <a href="#" className="hover:text-rose-400 transition">
+              Contact
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
